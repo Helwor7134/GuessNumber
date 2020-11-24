@@ -65,6 +65,7 @@ public class StartGame extends BaseActivity {
         });
     }
 
+    // 设置失败状态，有大小区别
     private void setFail(boolean isTrue){
         if (isTrue){
             condition.setText(R.string.big);
@@ -73,17 +74,20 @@ public class StartGame extends BaseActivity {
         }
     }
 
+    // 设置猜谜正确状态
     private void setSuccess(){
         condition.setBackgroundResource(R.drawable.microsoft_card_green);
         condition.setText(R.string.success);
     }
 
+    // 重置
     private void reSet(){
         condition.setBackgroundResource(R.drawable.microsoft_card);
         condition.setText(R.string.defaultText);
         input.setText("");
     }
 
+    // 重新开始弹窗
     private void confirmLogout() {
         builder = new AlertDialog.Builder(this)
                 .setMessage("确定重新开始吗")
