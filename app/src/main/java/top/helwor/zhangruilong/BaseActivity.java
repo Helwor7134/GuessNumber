@@ -23,16 +23,19 @@ public class BaseActivity extends AppCompatActivity {
         mContext = this;
     }
 
+    // 用于显示一个Toast
     public void showToast(String msg) {
         Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
     }
 
+    // 备用的同步Toast
     public void showToastSync(String msg) {
         Looper.prepare();
         Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
         Looper.loop();
     }
 
+    // 用于跳转界面的intend
     public void navigateTo(Class cls){
         Intent intent = new Intent(mContext,cls);
         startActivity(intent);

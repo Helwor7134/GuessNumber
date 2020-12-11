@@ -32,19 +32,24 @@ public class StartGame extends BaseActivity {
         submit = findViewById(R.id.start_btn_submit);
         restart = findViewById(R.id.start_btn_restart);
 
+        // 接收输入的值并判断
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // 接收输入的值
                 condition.setBackgroundResource(R.drawable.microsoft_card_red);
                 String s = input.getText().toString();
                 try {
+                    // 转换成整形
                     num = Integer.parseInt(s);
                 } catch (NumberFormatException e) {
+                    // 无法转换时的异常处理
                     condition.setText(R.string.error);
                     showToast("请输入数字");
                     return;
                 }
 
+                // 判断数字是否猜中，猜大了或是猜小了
                 if (num > random){
                     setFail(true);
                 } else if (num < random){
@@ -56,7 +61,7 @@ public class StartGame extends BaseActivity {
             }
         });
 
-        //restart
+        // 重新开始，
         restart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

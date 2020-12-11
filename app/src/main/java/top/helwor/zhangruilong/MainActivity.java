@@ -17,6 +17,7 @@ public class MainActivity extends BaseActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // 跳转到游戏界面
                 navigateTo(StartGame.class);
             }
         });
